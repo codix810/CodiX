@@ -28,7 +28,7 @@ type AboutTranslation = {
 
 type Translation = { about: AboutTranslation };
 
-// عدّاد بسيط للـ KPIs
+// ===== Hook للعداد =====
 function useCounter(target: number, duration = 1200) {
   const [val, setVal] = useState(0);
   const start = useRef<number | null>(null);
@@ -46,6 +46,28 @@ function useCounter(target: number, duration = 1200) {
   }, [target, duration]);
 
   return val;
+}
+
+// ===== Component فرعي لكل KPI =====
+function KpiCard({ kpi, icon, delay }: { kpi: KPI; icon: JSX.Element; delay?: number }) {
+  const value = useCounter(kpi.value, 1200);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: delay || 0 }}
+      className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md p-5 flex flex-col items-center text-white shadow-lg"
+    >
+      <div className="mb-2">{icon}</div>
+      <div className="text-3xl font-extrabold">
+        {value}
+        {kpi.suffix ?? ""}
+      </div>
+      <div className="text-sm text-gray-300 mt-1">{kpi.label}</div>
+    </motion.div>
+  );
 }
 
 export default function About() {
@@ -77,33 +99,16 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* KPIs (عدادات) */}
+        {/* KPIs */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
           {about.kpis.map((kpi, i) => {
-            const v = useCounter(kpi.value, 1200 + i * 250);
             const icon =
               i === 0 ? <Rocket size={26} /> :
               i === 1 ? <Users size={26} /> :
               i === 2 ? <Award size={26} /> :
               <ShieldCheck size={26} />;
-
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md p-5 flex flex-col items-center text-white shadow-lg"
-              >
-                <div className="mb-2">{icon}</div>
-                <div className="text-3xl font-extrabold">
-                  {v}
-                  {kpi.suffix ?? ""}
-                </div>
-                <div className="text-sm text-gray-300 mt-1">{kpi.label}</div>
-              </motion.div>
-            );
+            
+            return <KpiCard key={i} kpi={kpi} icon={icon} delay={i * 0.1} />;
           })}
         </div>
 
