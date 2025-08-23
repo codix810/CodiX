@@ -48,8 +48,7 @@ function useCounter(target: number, duration = 1200) {
   return val;
 }
 
-// ===== Component فرعي لكل KPI =====
-function KpiCard({ kpi, icon, delay }: { kpi: KPI; icon: JSX.Element; delay?: number }) {
+function KpiCard({ kpi, icon, delay }: { kpi: KPI; icon: React.ReactNode; delay?: number }) {
   const value = useCounter(kpi.value, 1200);
 
   return (
@@ -69,6 +68,7 @@ function KpiCard({ kpi, icon, delay }: { kpi: KPI; icon: JSX.Element; delay?: nu
     </motion.div>
   );
 }
+
 
 export default function About() {
   const { t } = useLang() as { t: Translation };
