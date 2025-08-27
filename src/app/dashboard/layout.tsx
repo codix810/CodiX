@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaPlusCircle, FaEye, FaEnvelopeOpenText, FaSignOutAlt } from 'react-icons/fa';
+import Link from "next/link";
 
 export default function DashboardLayout({
   children,
@@ -52,29 +53,21 @@ export default function DashboardLayout({
             menuOpen ? 'flex' : 'hidden'
           } flex-col md:flex md:flex-row md:items-center md:justify-between md:gap-6 mt-4 md:mt-0 w-full transition-all`}
         >
-          <a
+          <Link 
             href="/dashboard/AddMedia"
             className="flex items-center gap-2 justify-center text-blue-600 hover:bg-blue-100 px-4 py-2 rounded-md transition duration-200"
           >
             <FaPlusCircle />
             <span>AddMedia</span>
-          </a>
+          </Link>
 
-          <a
+          <Link 
             href="/dashboard/ViewMedia"
             className="flex items-center gap-2 justify-center text-purple-600 hover:bg-purple-100 px-4 py-2 rounded-md transition duration-200"
           >
             <FaEye />
             <span>ViewMedia</span>
-          </a>
-
-          <a
-            href="/dashboard/contact-messages"
-            className="flex items-center gap-2 justify-center text-green-600 hover:bg-green-100 px-4 py-2 rounded-md transition duration-200"
-          >
-            <FaEnvelopeOpenText />
-            <span>View Messages</span>
-          </a>
+          </Link>
 
           <button
             onClick={handleLogout}
