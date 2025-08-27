@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { connectDB } from '../../../../../lib/db';
 import { MediaItem } from '../../../../../models/MediaItem';
 import { v2 as cloudinary } from 'cloudinary';
@@ -10,8 +10,8 @@ cloudinary.config({
 });
 
 // 🗑️ DELETE: مسح عنصر بالكامل
-export async function DELETE(req: NextRequest, context: { params: { id: string } }) {
-  const id = context.params.id;
+export async function DELETE(req, context) {
+  const { id } = await context.params;
 
   try {
     await connectDB();
@@ -44,8 +44,8 @@ export async function DELETE(req: NextRequest, context: { params: { id: string }
 }
 
 // ✏️ PUT: تعديل عنصر
-export async function PUT(req: NextRequest, context: { params: { id: string } }) {
-  const id = context.params.id;
+export async function PUT(req, context) {
+  const { id } = await context.params;
 
   try {
     await connectDB();
@@ -83,9 +83,10 @@ export async function PUT(req: NextRequest, context: { params: { id: string } })
     return NextResponse.json({ error: 'Failed to update' }, { status: 500 });
   }
 }
+
 // 📄 GET: جلب عنصر واحد بالتفصيل
-export async function GET(req: NextRequest, context: { params: { id: string } }) {
-  const id = context.params.id;
+export async function GET(req, context) {
+  const { id } = await context.params;
 
   try {
     await connectDB();
