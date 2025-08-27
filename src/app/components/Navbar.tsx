@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Home, ShoppingCart, Info, User, Globe } from "lucide-react";
+import {  Code2, Lightbulb, FolderKanban, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import { useLang } from "../components/context/LangContext"; // 🟢 استدعاء الكونتكست
 
@@ -9,6 +10,8 @@ import { useLang } from "../components/context/LangContext"; // 🟢 استدع�
 type NavbarTranslation = {
   home: string;
   about: string;
+  programming: string;
+  solving: string;
   projects: string;
   contact: string;
   switch: string;
@@ -31,16 +34,13 @@ export default function Navbar() {
   };
 
   const navItems = [
-    {
-      name: t.navbar.projects,
-      icon: <ShoppingCart size={18} />,
-      href: "/products",
-    },
-    { name: t.navbar.contact, icon: <User size={18} />, href: "/account" },
-    { name: t.navbar.about, icon: <Info size={18} />, href: "/About" },
     { name: t.navbar.home, icon: <Home size={18} />, href: "/" },
+    { name: t.navbar.about, icon: <Info size={18} />, href: "/about" },
+    { name: t.navbar.programming, icon: <Code2 size={18} />, href: "/programming" },
+    { name: t.navbar.solving, icon: <Lightbulb size={18} />, href: "/solutions" },
+    { name: t.navbar.projects, icon: <FolderKanban size={18} />, href: "/projects" },
+    { name: t.navbar.contact, icon: <PhoneCall size={18} />, href: "/contact" },
   ];
-
   const [open, setOpen] = useState<boolean>(false);
 
   return (
@@ -48,8 +48,8 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full bg-gradient-to-r
-      from-gray-900 via-gray-800 to-purple-900
+      className="fixed top-0 left-0 w-full bg-gradient-to-tl
+      from-violet-950 via-black to-purple-950
       backdrop-blur-md shadow-lg z-50"
     >
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
@@ -63,7 +63,7 @@ export default function Navbar() {
         </button>
 
         {/* ✅ العناصر شمال */}
-        <ul className="hidden md:flex gap-10 font-medium text-white">
+        <ul className="hidden md:flex gap-8 font-medium text-white">
           {navItems.map((item, i) => (
             <motion.li
               key={i}

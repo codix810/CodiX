@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 // ✅ ميتاداتا بقت Typed
 export const metadata: Metadata = {
-  title: "codix",
+  title: "CodiX 🧑‍💻",
   description: "موقع احترافي معمول بـ Next.js",
 };
 

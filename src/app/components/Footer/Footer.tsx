@@ -7,7 +7,8 @@ export default function Footer() {
   const { t } = useLang();
 
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-purple-900 text-white py-12">
+    <footer className="bg-gradient-to-tl
+      from-violet-950 via-black to-black text-white py-12">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         
         {/* شعار / CTA */}

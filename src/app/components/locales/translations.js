@@ -3,15 +3,20 @@ const translations = {
     navbar: {
       home: "الرئيسية",
       projects: "المشاريع",
-      about: "عنّا",
-      contact: "تواصل",
+      about: "من نحن",
+      programming: " البرمجه والتطوير ",
+      solving: "حلول اعمال ",
+      // Portfolio: "سابقه الاعمال",
+      contact: "تواصل معنا",
       switch: "EN",
     },
     hero: {
       title: "أهلاً بك في",
-      desc: "تصميم مواقع احترافية + مشاريع جاهزة + ثقة وجودة عالية",
-      features: ["كود نظيف", "سرعة الأداء", "ثبات وجودة"], // ✅ Array
-      cta: "استكشف مشاريعنا",
+      desc: "نصمم مواقع ويب قوية ومخصصة لنشاطك بتركز فيها انك تحقق نتائج تفيدك.",
+      supDesc: "فريقنا ذو الخبرة من المصممين والمطورين والمسوقين موجود دائماً لمساعدتك في تجربة مميزة تنقل بيها شغلك لعالم الأونلاين.",
+      // desc: "تصميم مواقع احترافية + مشاريع جاهزة + ثقة وجودة عالية",
+      features: ["كود نظيف", "سرعة الأداء", "موقع مؤمن"], // ✅ Array
+      cta: "صمّم موقعك بنفسك الآن",
       brand: "CodiX",
     },
 presentation: {
@@ -135,14 +140,19 @@ Footer: {
       home: "Home",
       projects: "Projects",
       about: "About",
+      programming: "Programming & Development",
+      solving: "Business Solutions",
+      // Portfolio: "Portfolio",
       contact: "Contact",
       switch: "AR",
     },
     hero: {
       title: "Welcome to",
-      desc: " Professional websites + Ready projects + Trust & High Quality",
-      features: ["Clean Code", "High Performance", "Stability & Quality"], // ✅ Array
-      cta: "Explore Our Projects",
+      desc: "We design powerful and customized websites tailored to your business, focusing on delivering results that truly benefit you.",
+      supDesc: "Our experienced team of designers, developers, and marketers is always here to help you create an outstanding online presence that takes your business to the next level.",
+      // desc: "Professional web design + Ready-made projects + Trust & High quality",
+      features: ["Clean Code", "High Performance", "Secure Website"], // ✅ Array
+      cta: "Build Your Website Now",
       brand: "CodiX",
     },
 presentation: {

@@ -66,7 +66,8 @@ export default function Presentation() {
   return (
     <section
       id="presentation"
-      className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-purple-900 text-center relative"
+      className="py-20 bg-gradient-to-tl
+      from-violet-950 via-black to-purple-950 text-center relative"
     >
       {/* ✅ العنوان */}
       <motion.h2

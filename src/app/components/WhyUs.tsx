@@ -15,7 +15,8 @@ export default function WhyUs() {
   return (
     <section 
       id="whyus" 
-      className="py-20 text-center bg-gradient-to-br from-gray-900 via-gray-800 to-purple-900 relative"
+      className="py-20 text-center bg-gradient-to-tl
+      from-violet-800 via-black to-black relative"
     >
       {/* العنوان */}
       <motion.h2
