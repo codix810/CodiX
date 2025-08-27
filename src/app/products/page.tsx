@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type Project = {
   _id: string;
@@ -51,7 +52,7 @@ if (loading)
           className="p-5 bg-white/10 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 group hover:shadow-purple-500/40 transition"
         >
           <Link href={`/products/${p._id}`}>
-            <img
+            <Image 
               src={p.images[0]?.url || "/no-image.png"}
               alt={p.name}
               className="rounded-xl h-48 w-full object-cover"
