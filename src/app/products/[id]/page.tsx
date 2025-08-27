@@ -8,6 +8,7 @@ import { ArrowLeft } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 type MediaItem = {
   _id: string;
@@ -106,7 +107,7 @@ if (!project)
           )}
           {project.images.map((img, i) => (
             <SwiperSlide key={i}>
-              <img
+              <Image 
                 src={img.url}
                 alt={project.name}
                 className="w-full h-full object-cover rounded-xl"
