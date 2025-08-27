@@ -20,7 +20,7 @@ export default function DashboardLayout({
     if (isLoggedIn !== 'true') {
       router.push('/login');
     } else {
-      setUsername(storedUsername || 'Selwen Mahmoud');
+      setUsername(storedUsername || 'Codix');
     }
   }, []);
 
@@ -84,3 +84,4 @@ export default function DashboardLayout({
     </div>
   );
 }
+
