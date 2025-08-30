@@ -127,8 +127,12 @@ Footer: {
   cta: "صمّم موقعك بنفسك الآن",
   subtitle: "بعض من مشاريعنا التي نفخر بها.",
   rights: "© 2025 جميع الحقوق محفوظة CodiX",
-}
-
+},
+    reviews: {
+      title: "آراء عملائنا",
+      loading: "جاري التحميل...",
+      noReviews: "لا يوجد تقييمات بعد."
+    }
 
 
 
@@ -263,8 +267,12 @@ Footer: {
   cta: "Design Your Website Yourself Now",
   subtitle: "Some of our projects that we are proud of.",
   rights: "© 2025 All rights reserved by CodiX",
-}
-
+},
+    reviews: {
+      title: "Our Customers' Reviews",
+      loading: "Loading...",
+      noReviews: "No reviews yet."
+    }
 
 
 
