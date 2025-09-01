@@ -56,7 +56,7 @@ if (loading)
         spaceBetween={0}
         slidesPerView={1}
         loop
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 10000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation
         modules={[Autoplay, Pagination, Navigation]}
@@ -99,7 +99,9 @@ if (loading)
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
-                    className="mt-4 text-lg md:text-2xl text-gray-200 max-w-2xl"
+                    className="  md:text-2xl  max-w-2xl
+                    mt-2 text-gray-300 text-sm line-clamp-2
+                    "
                   >
                     {item.description}
                   </motion.p>
@@ -139,7 +141,7 @@ if (loading)
                 <h3 className="text-xl font-bold text-purple-700 group-hover:text-purple-900 transition">
                   {item.name}
                 </h3>
-                <p className="mt-2 text-gray-600">{item.description}</p>
+                <p className="mt-2 text-gray-500 text-sm line-clamp-2">{item.description}</p>
               </div>
             </Link>
           </motion.div>

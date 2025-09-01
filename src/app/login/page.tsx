@@ -11,7 +11,7 @@ export default function LoginPage() {
   const [error, setError] = useState('');
 
 const handleLogin = () => {
-  if (username === 'Codix' && password === 'Codix810') {
+  if (username === 'Selwen Mahmoud' && password === '$SE26//$MA26') {
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('username', username); // ✅ حفظ اسم المستخدم
     router.push('/dashboard');
@@ -49,4 +49,3 @@ const handleLogin = () => {
     </div>
   );
 }
-
